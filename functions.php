@@ -109,3 +109,27 @@ function understrap_child_customize_controls_js() {
 	);
 }
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
+
+
+// ============================================================================================
+// Custom functions and Hooks	 Naghun 	- 	Abdullah Sinanović 	- 	Duvar Apartmani
+// ============================================================================================
+
+function understrap_register_footer_menu() {
+    register_nav_menus( array(
+        'footer-menu' => __( 'Footer Menu', 'understrap' ),
+    ) );
+}
+add_action( 'after_setup_theme', 'understrap_register_footer_menu' );
+
+// ========================================================
+// adding custom js and css
+
+function duvar_files() {
+	wp_enqueue_style('navigation-style', get_stylesheet_directory_uri() . '/css/custom-css/navbar.css', array(), null, 'all');
+	wp_enqueue_style('footer-style', get_stylesheet_directory_uri() . '/css/custom-css/footer.css', array(), null, 'all');
+	wp_enqueue_style('front-page-style', get_stylesheet_directory_uri() . '/css/custom-css/front-page.css', array(), null, 'all');
+	wp_enqueue_style('reservation-style', get_stylesheet_directory_uri() . '/css/custom-css/reservation.css', array(), null, 'all');
+}
+
+add_action('wp_enqueue_scripts', 'duvar_files');

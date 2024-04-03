@@ -133,3 +133,12 @@ function duvar_files() {
 }
 
 add_action('wp_enqueue_scripts', 'duvar_files');
+
+
+function calendar_block() {
+	wp_register_script('calendar_block_script', get_stylesheet_directory_uri() . 'src/js/custom-javascript.js', array('wp-blocks', 'wp-editor'));
+	register_block_type('duvar-block/calendar-blockic', array(
+		'editor_script' => 'calendar_block_script'
+	));
+}
+add_action('init', 'calendar_block');

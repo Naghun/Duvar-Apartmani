@@ -1,5 +1,6 @@
 module.exports = {
-	"proxy": "localhost/",
-	"notify": false,
-	"files": ["./css/*.min.css", "./js/*.min.js", "./**/*.php"]
+    proxy: "https://duvar-apartmani.local/",
+    port: 3000,
+    open: true,
+    notify: false
 };

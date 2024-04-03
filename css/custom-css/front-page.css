@@ -176,3 +176,144 @@
         font-family: "Ubuntu", sans-serif;
     }
 }
+
+/* ==================================================== */
+
+.calendar-container {
+    position: relative;
+    transition: 1s all ease-in;
+}
+
+.reservation-overlay {
+    background-color: #EFEFEF;
+    padding: 20px;
+    height: 450px;
+    position: absolute;
+    z-index: 10;
+    top: 20%;
+    border-radius: 10px;
+    margin-left: 25%;
+
+    button {
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        background-color: transparent;
+        font-size: medium;
+        font-weight: 500;
+        text-transform: uppercase;
+        transition: .5s all;
+    }
+
+    .days, .dates{
+        display: grid;
+        grid-template-columns: repeat(7,32px);
+        gap: 10px;
+        margin-block: 10px;
+    }
+    .days2, .dates2{
+        display: grid;
+        grid-template-columns: repeat(7,32px);
+        gap: 10px;
+        margin-block: 10px;
+    }
+
+    .days span {
+        font-size: medium;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .days2 span {
+        font-size: medium;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .dates button {
+        color: slategray;
+        aspect-ratio: 1;
+    }
+    .dates2 button {
+        color: slategray;
+        aspect-ratio: 1;
+    }
+
+    .dates button:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+        user-select: none;
+    }
+    .dates2 button:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .dates button:hover {
+        background-color: lightslategray;
+        color: white;
+    }
+    .dates2 button:hover {
+        background-color: lightslategray;
+        color: white;
+    }
+
+    .dates button.today {
+        background-color: #fcfcfc;
+        color: black;
+    }
+    .dates2 button.today {
+        background-color: #fcfcfc;
+        color: black;
+    }
+
+    .dates button.selected {
+        background-color: #BF9F50;
+        color: black;
+    }
+    .dates2 button.selected2 {
+        background-color: #BF9F50;
+        color: black;
+    }
+
+    .header-calendar, .header-calendar2 {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+        gap: 15px;
+
+        select, input {
+            font-size: large;
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 500;
+            border: 1px solid #eee;
+        }
+
+        input {
+            max-width: 64px;
+        }
+
+        button {
+            color: slategray;
+        }
+    }
+
+    .footer-calendar {
+        justify-content: flex-end;
+        gap: 10px;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+        font-family: "Ubuntu", sans-serif;
+
+        button {
+            background-color: #929292;
+            font-family: "Ubuntu", sans-serif;
+        }
+
+        button.apply {
+            background-color: #BF9F50;
+            color: black;
+        }
+    }
+}

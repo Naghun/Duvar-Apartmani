@@ -1,12 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-.reservation-container {
-    color: #282828;
-    background-color: #BF9F50;
-    padding: 15px;
-    font-size: 20px;
 
-    h3 {
-        font-family: "Playfair Display", serif;
+.reservation-container {
+    background-color: #eee;
+    padding-top: 120px;
+    padding-bottom: 20px;
+
+    .details {
+        font-family: "Ubuntu", sans-serif;
         font-weight: 700;
+        font-size: larger;
     }
+
+}
+
+.reservation-details {
+    background-color: #e99191;
+    padding: 20px 10px;
+
+    .reservation-check-in {
+        margin-bottom: 10px;
+        margin-left: 10px 5px;
+
+        p {
+            margin: 0%;
+        }
+
+        .date {
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 500;
+            background-color: #f3f3f3;
+            border: none;
+            padding: 10px;
+        }
+    }
+    .reservation-check-out {
+        margin-bottom: 10px;
+        margin-left: 10px 5px;
+
+        p {
+            margin: 0%;
+        }
+
+        .date {
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 500;
+            background-color: #f3f3f3;
+            border: none;
+            padding: 10px;
+        }
+    }
+
+
+}
+
+.avalible-apartment {
+    background-color: #723d3d;
 }

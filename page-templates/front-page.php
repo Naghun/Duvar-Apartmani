@@ -32,8 +32,8 @@ $container = get_theme_mod( 'understrap_container_type' );
             <div class="front-page-reservation-container col-12 justify-content-center align-items-center">
                 <form action="" class="d-flex col-12 justify-content-around align-items-center">
                     <h1 class="d-flex justify-content-center align-items-center">REZERVIŠITE SMJEŠTAJ U BLAGAJU</h1>
-                    <input type="text" placeholder="Prijava" class="input-field" id="calendar-start">
-                    <input type="text" placeholder="Odjava"  class="input-field" id="calendar-end">
+                    <input type="text" placeholder="Prijava" class="input-field" id="calendar-start" autocomplete="off">
+                    <input type="text" placeholder="Odjava"  class="input-field" id="calendar-end" autocomplete="off">
                     <input type="submit" value="Traži" class="submit-button btn btn-dark">
                 </form>
             </div>
@@ -171,7 +171,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="row"> <!-- .row -->
             <div class="front-page-small-footer col-12">
                 <h3 class="col-8 d-flex justify-content-center align-items-center">PRONAĐITE SVOJ MIR I SMJEŠTAJ U BLIZINI TEKIJE U BLAGAJU</h3>
-                <button class="col-2 btn btn-dark">Rezervacija</button>
+                <a href="<?php echo esc_url('apartman'); ?>" class="col-2 p-2"><button class="col-12 btn btn-dark">Rezervacija</button></a>
             </div>
         </div><!-- .row -->
 

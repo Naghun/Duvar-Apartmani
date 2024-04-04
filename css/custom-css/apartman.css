@@ -1,0 +1,76 @@
+.apartman {
+    border: 2px solid rgb(219, 192, 132);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #BF9F50;
+    margin: 10px 0px;
+
+    .apartman-image {
+        img {
+            border-radius: 20px;
+            padding: 10px;
+        }
+    }
+
+    .apartman-data {
+
+        font-family: "Ubuntu", sans-serif;
+
+        a {
+            text-decoration: none;
+            color: #9b8141;
+            transition: .2s all;
+        }
+
+        a:hover {
+            color: #bdac82;
+        }
+
+        h2 {
+            width: 90%;
+            padding-left: 10px;
+        }
+        .rating {
+            width: 10%;
+            background-color: #BF9F50;
+            padding: 10px;
+            margin-right: 20px;
+            border: 2px solid rgba(20, 20, 20, 0.5);
+            border-radius: 10px;
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 700;
+
+            span {
+                padding-right: 10px;
+            }
+        }
+
+        .apartman-data-body {
+            .body-right {
+                p {
+                    font-family: "Ubuntu", sans-serif;
+                    font-weight: 700;
+                }
+
+                .calculation {
+                    font-family: "Ubuntu", sans-serif;
+                    color: rgb(167, 167, 167);
+                }
+            }
+            .body-left {
+                p {
+                    font-family: "Ubuntu", sans-serif;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        .apartman-data-footer button {
+            background-color: #BF9F50;
+            color: black;
+        }
+
+        .apartman-data-footer button:hover {
+            color: #5a5a5a;
+        }
+    }
+}

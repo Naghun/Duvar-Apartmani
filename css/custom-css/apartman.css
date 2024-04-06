@@ -74,3 +74,38 @@
         }
     }
 }
+
+@media (max-width: 1000px) {
+    .front-page-small-footer h3 {
+        font-size: 14px;
+        width: 60%;
+    }
+    .front-page-small-footer button {
+        font-size: 14px;
+        width: 30%;
+    }
+}
+
+@media (max-width: 1400px) {
+    .apartman-data-header {
+        h2 {
+            width: 60%;
+        }
+        .rating {
+            min-width: 80px;
+        }
+    }
+}
+@media (max-width: 1000px) {
+    .apartman {
+        flex-direction: column;
+
+        .apartman-image, .apartman-data {
+            width: 100%;
+        }
+        .rating {
+            min-width: 80px;
+        }
+    }
+}
+

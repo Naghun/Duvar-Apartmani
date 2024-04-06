@@ -132,6 +132,8 @@ function duvar_files() {
 	wp_enqueue_style('reservation-style', get_stylesheet_directory_uri() . '/css/custom-css/reservation.css', array(), null, 'all');
 	wp_enqueue_style('apartman-style', get_stylesheet_directory_uri() . '/css/custom-css/apartman.css', array(), null, 'all');
 	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4' );
+	wp_enqueue_script('custom-calendar', get_template_directory_uri() . '/src/js/calendar.js', array(), '1.0', true);
+
 
 	
 }

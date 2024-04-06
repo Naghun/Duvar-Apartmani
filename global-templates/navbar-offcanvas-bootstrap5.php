@@ -38,15 +38,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php
 		} else {
 			the_custom_logo();
-			
 		}
 		?>
 		<!-- end custom logo -->
-		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNavOffcanvas" aria-controls="navbarNavOffcanvas" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-			<span class="navbar-toggler-icon"></span>
+		<button class="navbar-toggler hamburger d-flex justify-content-center align-items-center p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNavOffcanvas" aria-controls="navbarNavOffcanvas" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+			<span class="navbar-toggler-icon p-0 m-0"></span>
 		</button>
 
-		<div class="offcanvas offcanvas-end bg-crna" tabindex="-1" id="navbarNavOffcanvas">
+		<div class="offcanvas offcanvas-end custom-dropdown" tabindex="-1" id="navbarNavOffcanvas">
 
 			<div class="offcanvas-header justify-content-end">
 				<button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -57,9 +56,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 			wp_nav_menu(
 				array(
 					'theme_location'  => 'primary',
-					'container_class' => 'offcanvas-body',
+					'container_class' => 'offcanvas-body col-12',
 					'container_id'    => '',
-					'menu_class'      => 'navbar-nav justify-content-end flex-grow-1 pe-3 navbar-list fs-5',
+					'menu_class'      => 'navbar-nav justify-content-end flex-grow-1 p-3 navbar-list fs-5 col-12',
 					'fallback_cb'     => '',
 					'menu_id'         => 'main-menu',
 					'depth'           => 2,

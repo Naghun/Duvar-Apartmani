@@ -14,7 +14,7 @@
 }
 
 .reservation-details {
-    background-color: #e99191;
+    background-color: #BF9F50;
     padding: 20px 10px;
 
     .reservation-check-in {
@@ -54,5 +54,5 @@
 }
 
 .avalible-apartment {
-    background-color: #723d3d;
+    background-color: #EFEFEF;
 }

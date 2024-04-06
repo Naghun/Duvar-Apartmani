@@ -40,6 +40,7 @@ $container = get_theme_mod( 'understrap_container_type' );
         </div><!-- .row -->
 
         <!-- ======================================================== -->
+
         <!-- Calendar-container -->
 
         <div class="row d-flex justify-content-center align-items-center calendar-container"><!-- .row -->
@@ -141,7 +142,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                         Placeat ducimus adipisci, 
                         quaerat magnam dolores perferendis! Amet, consectetur. Quam.
                     </p>
-                    <button class="btn btn-dark">Više informacija</button>
+                    <button class="btn btn-dark dugme-1">Više informacija</button>
                 </div>
             </div>
         </div><!-- .row -->

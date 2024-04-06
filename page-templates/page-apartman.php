@@ -59,7 +59,6 @@ $container = get_theme_mod( 'understrap_container_type' );
                                     <p class="text-center">Dodatna Oprema: <?php echo get_field('dodatna_oprema'); ?></p>
                                 </div>
                                 <div class="body-right col-2 d-flex flex-column align-items-end justify-content-end">
-                                    <p class="calculation">2 Nights</p>
                                     <p class="text-center align-self-bottom">Cijena: <?php echo get_field('cijena'); ?>KM</p>
                                 </div>
 

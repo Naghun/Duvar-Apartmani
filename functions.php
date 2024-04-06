@@ -126,25 +126,22 @@ add_action( 'after_setup_theme', 'understrap_register_footer_menu' );
 // adding custom js and css
 
 function duvar_files() {
+	if (is_page('Početna Stranica') || is_page_template('Home Page Template')) {
+		wp_enqueue_script('custom-calendar', get_stylesheet_directory_uri() . '/src/js/calendar.js', array(), '1.0', true);
+	}
+	if (is_page('Rezervacija') || is_page_template('Reservation Page Template')) {
+		wp_enqueue_script('reservation-form', get_stylesheet_directory_uri() . '/src/js/reservation.js', array(), '1.0', true);
+	}
+	if (is_page('Single Apartman') || is_page_template('Single Apartman')) {
+		wp_enqueue_script('image-slider', get_stylesheet_directory_uri() . '/src/js/image-slider.js', array(), '1.0', true);
+	}
 	wp_enqueue_style('navigation-style', get_stylesheet_directory_uri() . '/css/custom-css/navbar.css', array(), null, 'all');
 	wp_enqueue_style('footer-style', get_stylesheet_directory_uri() . '/css/custom-css/footer.css', array(), null, 'all');
 	wp_enqueue_style('front-page-style', get_stylesheet_directory_uri() . '/css/custom-css/front-page.css', array(), null, 'all');
 	wp_enqueue_style('reservation-style', get_stylesheet_directory_uri() . '/css/custom-css/reservation.css', array(), null, 'all');
 	wp_enqueue_style('apartman-style', get_stylesheet_directory_uri() . '/css/custom-css/apartman.css', array(), null, 'all');
+	wp_enqueue_style('apartman-single-style', get_stylesheet_directory_uri() . '/css/custom-css/single-apartman.css', array(), null, 'all');
 	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4' );
-	wp_enqueue_script('custom-calendar', get_template_directory_uri() . '/src/js/calendar.js', array(), '1.0', true);
-
-
-	
 }
 
 add_action('wp_enqueue_scripts', 'duvar_files');
-
-
-function calendar_block() {
-	wp_register_script('calendar_block_script', get_stylesheet_directory_uri() . 'src/js/custom-javascript.js', array('wp-blocks', 'wp-editor'));
-	register_block_type('duvar-block/calendar-blockic', array(
-		'editor_script' => 'calendar_block_script'
-	));
-}
-add_action('init', 'calendar_block');

@@ -28,12 +28,26 @@ $container = get_theme_mod( 'understrap_container_type' );
                     ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <header class="entry-header">
-                            <h1 class="entry-title"><?php the_title(); ?></h1>
+                            <h1 class="entry-title d-flex justify-content-center align-items-center">Slike za <?php the_title(); ?></h1>
                         </header>
-
-                        <div class="entry-content">
-                            <?php the_content(); ?>
-                        </div>
+                        <section aria-label="photos d-flex justify-content-center align-items-center row p-2">
+                            <div class="carousel position-relative d-flex justify-content-center align-items-center m-auto" data-carousel>
+                                <button class="carousel-button prev" data-carousel-button = "prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-button next" data-carousel-button = "next"><i class="fas fa-chevron-right"></i></button>
+                                <ul class="col-12 d-flex img-slider" data-slides>
+                                    <li class="slide" data-active>
+                                        <img src="<?php echo get_theme_file_uri('/src/images/blagaj-1.jpg'); ?>" alt="blagaj slika">
+                                    </li>
+                                    <li class="slide">
+                                        <img src="<?php echo get_theme_file_uri('/src/images/blagaj-2.jpg'); ?>" alt="blagaj slika">
+                                    </li>
+                                    <li class="slide">
+                                        <img src="<?php echo get_theme_file_uri('/src/images/blagaj-3.jpg'); ?>" alt="blagaj slika">
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </section>
                     </article>
 
                     <?php

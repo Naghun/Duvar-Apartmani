@@ -39,6 +39,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		} else {
 			the_custom_logo();
 		}
+		
 		?>
 		<!-- end custom logo -->
 		<button class="navbar-toggler hamburger d-flex justify-content-center align-items-center p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNavOffcanvas" aria-controls="navbarNavOffcanvas" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">

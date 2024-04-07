@@ -15,6 +15,7 @@
         }
     }
 
+
     .apartman-data {
 
         font-family: "Ubuntu", sans-serif;
@@ -109,6 +110,13 @@
         }
         .rating {
             min-width: 80px;
+        }
+    }
+}
+@media (max-width: 1000px) {
+    .front-page-small-footer {
+        button {
+            font-size: 12px;
         }
     }
 }

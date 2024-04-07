@@ -1,0 +1,59 @@
+/* ============================================= *
+*   Page Banner Template
+* ============================================== */
+
+.page-banner {
+    display: block;
+    width: 1500px;
+    background-size: cover;
+    padding: 0%;
+    margin: 0%;
+}
+
+/* ============================================= *
+*   Page Break Template
+* ============================================== */
+
+
+.front-page-small-footer {
+    background-color: #BF9F50;
+    height: 100px;
+    gap: 20px;
+    font-family: "Playfair Display", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+        font-weight: 700;
+    }
+    button {
+        border-radius: 5px;
+        color: #BF9F50;
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    button:hover {
+        color: #EFEFEF;
+        background-color: #3d3d3d;
+    }
+}
+
+@media (max-width: 1400px) {
+    .front-page-small-footer h3 {
+        font-size: 24px;
+    }   
+}
+@media (max-width: 1200px) {
+    .front-page-small-footer h3 {
+        font-size: 20px;
+    }   
+}
+@media (max-width: 1000px) {
+    .front-page-small-footer h3, a {
+        width: 50%;
+        text-align: center;
+    }
+}

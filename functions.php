@@ -115,33 +115,50 @@ add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_co
 // Custom functions and Hooks	 Naghun 	- 	Abdullah Sinanović 	- 	Duvar Apartmani
 // ============================================================================================
 
-function understrap_register_footer_menu() {
+function understrap_register_menus() {
     register_nav_menus( array(
         'footer-menu' => __( 'Footer Menu', 'understrap' ),
+		'header-menu-2' => __( 'Header Menu 2', 'understrap' ),
     ) );
 }
-add_action( 'after_setup_theme', 'understrap_register_footer_menu' );
+add_action( 'after_setup_theme', 'understrap_register_menus' );
 
 // ========================================================
 // adding custom js and css
 
 function duvar_files() {
+	// js
 	if (is_page('Početna Stranica') || is_page_template('Home Page Template')) {
 		wp_enqueue_script('custom-calendar', get_stylesheet_directory_uri() . '/src/js/calendar.js', array(), '1.0', true);
 	}
+
 	if (is_page('Rezervacija') || is_page_template('Reservation Page Template')) {
 		wp_enqueue_script('reservation-form', get_stylesheet_directory_uri() . '/src/js/reservation.js', array(), '1.0', true);
+		wp_enqueue_style('reservation-style', get_stylesheet_directory_uri() . '/css/custom-css/reservation.css', array(), null, 'all');
 	}
-	if (is_page('Single Apartman') || is_page_template('Single Apartman')) {
+	if (is_page('apartman') || is_page_template('Apartman')) {
+		wp_enqueue_style('apartman-style', get_stylesheet_directory_uri() . '/css/custom-css/apartman.css', array(), null, 'all');
+	}
+	if (is_singular('apartman')) {
 		wp_enqueue_script('image-slider', get_stylesheet_directory_uri() . '/src/js/image-slider.js', array(), '1.0', true);
+		wp_enqueue_style('apartman-single-style', get_stylesheet_directory_uri() . '/css/custom-css/single-apartman.css', array(), null, 'all');
 	}
+
+	// css
+	
+	if (is_single()) {
+		wp_enqueue_style('single-style', get_stylesheet_directory_uri() . '/css/custom-css/single.css', array(), null, 'all');
+	}
+
+	if ( is_page_template( 'global-templates/page-break-template.php' || is_page_template('global-templates/page-banner.php'))) {
+        wp_enqueue_style( 'global-styles-style', get_stylesheet_directory_uri() . '/css/custom-css/global-temp.css', array(), null, 'all');
+    }
+
 	wp_enqueue_style('navigation-style', get_stylesheet_directory_uri() . '/css/custom-css/navbar.css', array(), null, 'all');
 	wp_enqueue_style('footer-style', get_stylesheet_directory_uri() . '/css/custom-css/footer.css', array(), null, 'all');
 	wp_enqueue_style('front-page-style', get_stylesheet_directory_uri() . '/css/custom-css/front-page.css', array(), null, 'all');
-	wp_enqueue_style('reservation-style', get_stylesheet_directory_uri() . '/css/custom-css/reservation.css', array(), null, 'all');
-	wp_enqueue_style('apartman-style', get_stylesheet_directory_uri() . '/css/custom-css/apartman.css', array(), null, 'all');
-	wp_enqueue_style('apartman-single-style', get_stylesheet_directory_uri() . '/css/custom-css/single-apartman.css', array(), null, 'all');
-	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4' );
+	wp_enqueue_style('blog-style', get_stylesheet_directory_uri() . '/css/custom-css/index.css', array(), null, 'all');
+	wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4');
 }
 
 add_action('wp_enqueue_scripts', 'duvar_files');

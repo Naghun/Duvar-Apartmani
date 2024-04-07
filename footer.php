@@ -21,7 +21,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<div class="col-md-12 row d-flex justify-content-center align-items-center">
 
-				<footer class="col-12 d-flex justify-content-center align-items-center" id="colophon">
+				<footer class="col-12 d-flex justify-content-center align-items-center colophon" id="colophon">
 
 					<div class="socials col-3">
 						<img src="<?php echo get_stylesheet_directory_uri() . '/src/images/facebook.svg'; ?>" alt="facebook ikona">
@@ -49,7 +49,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="line-break"></div>
 
-					<p class="dizajn col-3 p-2 m-auto">Dizajn i programiranje: <a href="#">Indat.ba</a></p>
+					<p class="dizajn col-3 p-2 m-auto"><span>Dizajn i programiranje: </span><a href="#">Indat.ba</a></p>
 
 				</footer><!-- #colophon -->
 

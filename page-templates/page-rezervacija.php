@@ -17,10 +17,27 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?> m-auto">
+    <div class="<?php echo esc_attr( $container ); ?> m-auto">
 
+        <div class="reservation-header-container row d-flex flex-column">
+            <div class="reservation-header d-flex justify-content-center align-items-center">
+                <h1>Apartman Blagaj</h1>
+            </div>
+        </div>
 
-		<div class="row d-flex justify-content-center align-items-center m-0 p-0">
+        
+        <div class="row front-page-reservation-container justify-content-center align-items-center">
+            <form action="" class="d-flex col-12 justify-content-around align-items-center">
+                <h1 class="d-flex justify-content-center align-items-center">REZERVIŠITE SMJEŠTAJ U BLAGAJU</h1>
+                <input type="text" placeholder="Prijava" class="input-field input-field-sign" id="calendar-start" autocomplete="off">
+                <input type="text" placeholder="Odjava"  class="input-field" id="calendar-end" autocomplete="off">
+                <input type="submit" value="Traži" class="submit-button btn btn-dark">
+            </form>
+        </div>
+
+        <?php get_template_part('global-templates/calendar-template'); ?>
+
+		<div class="row d-flex justify-content-center align-items-center">
             <div class="reservation-container col-12 d-flex">
                 <hr class="col-5">
                 <div class="details col-2 d-flex justify-content-center align-items-center">Detalji Rezervacije</div>
@@ -28,23 +45,8 @@ $container = get_theme_mod( 'understrap_container_type' );
             </div>
         </div><!-- .row -->
 
-
-		<div class="row d-flex justify-content-start align-items-start m-0 p-0 reservation-container-data">
-            <div class="reservation-details col-3 d-flex flex-column justify-content-start align-items-start">
-                <h3 class="col-12 d-flex justify-content-center p-3">Apartman Blagaj</h3>
-                <div class="reservation-check-in p-2 m-o col-12">
-                    <p>Prijava</p>
-                    <p class="date col-12 d-flex justify-content-center align-items-center"><span class="col-4"><i class="far fa-calendar fs-5"></i> Saturday</span><span class="col-7">10.4.2024</span><i class="fas fa-caret-down col-1 fs-4"></i></p>
-                </div>
-                <div class="reservation-check-out p-2 m-o col-12">
-                    <p>Odjava</p>
-                    <p class="date col-12 d-flex justify-content-center align-items-center"><span class="col-4"><i class="far fa-calendar fs-5"></i> Saturday</span><span class="col-7">10.4.2024</span><i class="fas fa-caret-down col-1 fs-4"></i></p>
-                </div>
-                <div class="p-2">
-                    <button class="btn btn-dark">Izmjeni Datum</button>
-                </div>   
-            </div>
-            <div class="avalible-apartment col-9 d-flex flex-column justify-content-start align-items-center py-1 my-0">
+		<div class="row d-flex justify-content-start align-items-start reservation-container-data">
+            <div class="avalible-apartment col-12 d-flex flex-column justify-content-start align-items-center py-1 my-0">
                 <div class="apartment-list d-flex justify-content-center align-items-center col-12 p-2">
                     <div class="col-6 p-2 d-flex flex-column justify-content-center align-items-center">
                         <img src="<?php echo get_theme_file_uri('/src/images/placeholder-1.jpg'); ?>" alt="apartman placeholder slika" class="col-12 my-2">
@@ -68,8 +70,6 @@ $container = get_theme_mod( 'understrap_container_type' );
                 </div>
             </div>
         </div><!-- .row -->
-
-
 
 
     </div><!-- .container(-fluid) -->

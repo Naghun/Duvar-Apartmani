@@ -25,7 +25,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="socials col-3">
 						<img src="<?php echo get_stylesheet_directory_uri() . '/src/images/facebook.svg'; ?>" alt="facebook ikona">
-						<img src="<?php echo get_stylesheet_directory_uri() . '/src/images/instagram.svg'; ?>" alt="isntagram ikona">
+						<img src="<?php echo get_stylesheet_directory_uri() . '/src/images/instagram.svg'; ?>" alt="instagram ikona">
 						<img src="<?php echo get_stylesheet_directory_uri() . '/src/images/airbnb.svg'; ?>" alt="airbnb ikona">
 						<img src="<?php echo get_stylesheet_directory_uri() . '/src/images/booking.svg'; ?>" alt="booking ikona">
 					</div>
@@ -49,7 +49,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="line-break"></div>
 
-					<p class="dizajn col-3 p-2 m-auto"><span>Dizajn i programiranje: </span><a href="#">Indat.ba</a></p>
+					<p class="dizajn col-3 p-2 m-auto"><span>Dizajn i programiranje: </span><a href="https://indat.ba/">Indat.ba</a></p>
 
 				</footer><!-- #colophon -->
 

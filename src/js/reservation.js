@@ -10,6 +10,7 @@ form_opener.addEventListener('click', (e) => {
 })
 form_closer.addEventListener('click', (e) => {
     e.preventDefault()
+    form_container.scrollIntoView({behavior: 'smooth'})
     form_container.classList.remove('d-flex')
     form_container.classList.add('d-none')
 })

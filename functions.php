@@ -135,6 +135,7 @@ function duvar_files() {
 	if (is_page('Rezervacija') || is_page_template('Reservation Page Template')) {
 		wp_enqueue_script('reservation-form', get_stylesheet_directory_uri() . '/src/js/reservation.js', array(), '1.0', true);
 		wp_enqueue_style('reservation-style', get_stylesheet_directory_uri() . '/css/custom-css/reservation.css', array(), null, 'all');
+		wp_enqueue_script('reservation-calendar', get_stylesheet_directory_uri() . '/src/js/calendar.js', array(), '1.0', true);
 	}
 	if (is_page('apartman') || is_page_template('Apartman')) {
 		wp_enqueue_style('apartman-style', get_stylesheet_directory_uri() . '/css/custom-css/apartman.css', array(), null, 'all');
@@ -143,8 +144,16 @@ function duvar_files() {
 		wp_enqueue_script('image-slider', get_stylesheet_directory_uri() . '/src/js/image-slider.js', array(), '1.0', true);
 		wp_enqueue_style('apartman-single-style', get_stylesheet_directory_uri() . '/css/custom-css/single-apartman.css', array(), null, 'all');
 	}
-
-	// css
+	if (is_page('Kontakt') || is_page_template('Kontakt Page Template')) {
+		wp_enqueue_style('contact-style', get_stylesheet_directory_uri() . '/css/custom-css/contact.css', array(), null, 'all');
+	}
+	if (is_page('Lokacija') || is_page_template('Location Page Template')) {
+		wp_enqueue_style('location-style', get_stylesheet_directory_uri() . '/css/custom-css/location.css', array(), null, 'all');
+		wp_enqueue_script('custom-calendar', get_stylesheet_directory_uri() . '/src/js/calendar.js', array(), '1.0', true);
+	}
+	if (is_page('Politika Privatnosti') || is_page_template('default'))  {
+		wp_enqueue_style('location-style', get_stylesheet_directory_uri() . '/css/custom-css/privacy.css', array(), null, 'all');
+	}
 	
 	if (is_single()) {
 		wp_enqueue_style('single-style', get_stylesheet_directory_uri() . '/css/custom-css/single.css', array(), null, 'all');
@@ -158,6 +167,7 @@ function duvar_files() {
 	wp_enqueue_style('footer-style', get_stylesheet_directory_uri() . '/css/custom-css/footer.css', array(), null, 'all');
 	wp_enqueue_style('front-page-style', get_stylesheet_directory_uri() . '/css/custom-css/front-page.css', array(), null, 'all');
 	wp_enqueue_style('blog-style', get_stylesheet_directory_uri() . '/css/custom-css/index.css', array(), null, 'all');
+
 	wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4');
 }
 

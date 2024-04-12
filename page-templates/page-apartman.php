@@ -29,7 +29,7 @@ $container = get_theme_mod( 'understrap_container_type' );
         <div class="row"> <!-- .row -->
             <div class="front-page-small-footer col-12">
                 <h3 class="col-8 d-flex justify-content-center align-items-center">PRONAĐITE SVOJ MIR I SMJEŠTAJ U BLIZINI TEKIJE U BLAGAJU</h3>
-                <button class="col-2 btn btn-dark">Rezervacija</button>
+                <a href="<?php echo esc_url(get_permalink(get_page_by_path('rezervacija'))); ?>" class="col-2 btn btn-dark">Rezervacija</a>
             </div>
         </div><!-- .row -->
 
@@ -65,7 +65,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                             </div>
                             <hr class="col-12 p-0 m-0 my-3">
                             <div class="apartman-data-footer col-12 d-flex justify-content-end align-items-center  py-3 px-2">
-                                <button class="btn btn-dark p-2 fs-4">Pogledaj Dostupnost</button>
+                                <a href="<?php echo esc_url(get_permalink(get_page_by_path('rezervacija'))); ?>" class="btn btn-dark p-2 fs-4">Pogledaj Dostupnost</a>
                             </div>
 
                             

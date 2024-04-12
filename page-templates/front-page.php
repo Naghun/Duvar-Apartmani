@@ -35,7 +35,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <h1 class="d-flex justify-content-center align-items-center">REZERVIŠITE SMJEŠTAJ U BLAGAJU</h1>
                     <input type="text" placeholder="Prijava" class="input-field input-field-sign" id="calendar-start" autocomplete="off">
                     <input type="text" placeholder="Odjava"  class="input-field" id="calendar-end" autocomplete="off">
-                    <input type="submit" value="Traži" class="submit-button btn btn-dark">
+                    <a class="submit-button btn btn-dark p-2 m-0" href="<?php echo esc_url(get_permalink(get_page_by_path('rezervacija'))); ?>">Traži</a>
                 </form>
             </div>
         </div><!-- .row -->
@@ -143,7 +143,8 @@ $container = get_theme_mod( 'understrap_container_type' );
                         Placeat ducimus adipisci, 
                         quaerat magnam dolores perferendis! Amet, consectetur. Quam.
                     </p>
-                    <button class="btn btn-dark data-text-button">Više informacija</button>
+                    <a class="btn btn-dark data-text-button" href="<?php echo esc_url(get_permalink(get_page_by_path('apartman'))); ?>">Više Informacija</a>
+                    
                 </div>
             </div>
         </div><!-- .row -->
@@ -160,7 +161,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                         Eveniet eligendi voluptatum temporibus, eum a mollitia odit molestias necessitatibus dicta! 
                         Placeat ducimus adipisci, 
                         quaerat magnam dolores perferendis! Amet, consectetur. Quam.</p>
-                    <button class="btn btn-dark data-text-button">Više informacija</button>
+                    <a class="btn btn-dark data-text-button" href="<?php echo esc_url(get_permalink(get_page_by_path('lokacija'))); ?>">Više Informacija</a>
                 </div>
                 <div class="data-image col-6 p-2">
                     <img src="<?php echo get_theme_file_uri('/src/images/kuca-slika-2.jpg'); ?>" alt="slika kuce">

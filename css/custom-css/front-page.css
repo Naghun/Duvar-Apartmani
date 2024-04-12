@@ -6,6 +6,10 @@
     padding-top: 120px;
 }
 
+.page-wrapper {
+    min-height: calc(100vh - 120px);
+}
+
 /* ==================================================== */
 
 .front-page-reservation-container {
@@ -44,15 +48,21 @@
         .submit-button {
             width: 10%;
             color: #BF9F50;
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 500;
             border: none;
             border-radius: 5px;
             text-transform: uppercase;
             padding: 8px 20px;
             font-weight: 500;
+            text-decoration: none;
+            transition: 0.3s all;
         }
-        
+
         .submit-button:hover {
             background-color: #3d3d3d;
+            color: white;
+            
         }
     }
 
@@ -153,6 +163,7 @@
             justify-content: space-between;
             gap: 20px;
             font-family: "Ubuntu", sans-serif;
+            text-align: justify;
             h3 {
                 font-family: "Playfair Display", serif;
                 font-weight: 700;
@@ -172,14 +183,16 @@
                 padding-top: 10px;
             } 
 
-            button {
+            a {
                 margin: 10px;
                 width: 40%;
                 color: #BF9F50;
                 text-transform: uppercase;
                 font-weight: 700;
+                transition: 0.3s all;
+                text-decoration: none;
             }
-            button:hover {
+            a:hover {
                 color: #EFEFEF;
                 background-color: #3d3d3d;
             }
@@ -439,6 +452,7 @@
     top: 20%;
     border-radius: 10px;
     margin-left: 25%;
+    box-shadow: 5px 5px 5px rgba(24, 24, 24, 0.7);
 
     button {
         cursor: pointer;

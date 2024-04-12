@@ -3,8 +3,8 @@
 
 .reservation-container {
     background-color: #eee;
-    padding-top: 140px;
     padding-bottom: 20px;
+    padding-top: 20px;
 
     .details {
         font-family: "Ubuntu", sans-serif;
@@ -13,48 +13,19 @@
     }
 }
 
-.reservation-details {
+
+
+.reservation-header-container {
     background-color: #BF9F50;
-    padding: 20px 10px;
-
-    .reservation-check-in {
-        margin-bottom: 10px;
-        margin-left: 10px 5px;
-
-        p {
-            margin: 0%;
-        }
-
-        .date {
-            font-family: "Ubuntu", sans-serif;
-            font-weight: 500;
-            background-color: #f3f3f3;
-            border: none;
-            padding: 10px;
-        }
-    }
-    .reservation-check-out {
-        margin-bottom: 10px;
-        margin-left: 10px 5px;
-
-        p {
-            margin: 0%;
-        }
-
-        .date {
-            font-family: "Ubuntu", sans-serif;
-            font-weight: 500;
-            background-color: #f3f3f3;
-            border: none;
-            padding: 10px;
-        }
-    }
-
+    padding-top: 140px;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
 
 }
 
 .avalible-apartment {
     background-color: #EFEFEF;
+    position: relative;
     h3 {
         font-family: "Playfair Display", serif;
         font-weight: 600;
@@ -67,14 +38,10 @@
 
 
 @media (max-width: 1400px) {
-    .reservation-container-data {
-        .reservation-details {
-            width: 30%;
-        }
-    }
+
 
     .avalible-apartment {
-        width: 70%;
+        width: 100%;
         h3 {
             text-align: center;
         }
@@ -92,15 +59,6 @@
             padding: 0px;
             text-align: center;
         }
-    }
-    .reservation-container-data {
-        .reservation-details {
-            width: 40%;
-        }
-    }
-
-    .avalible-apartment {
-        width: 60%;
     }
 }
 @media (max-width: 1000px) {
@@ -127,6 +85,7 @@
             }
         }
 }
+
 
 /* ==================================================== */
 /*                  Form details                        */

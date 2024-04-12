@@ -69,23 +69,30 @@
             }
         }
 
-        .apartman-data-footer button {
+        .apartman-data-footer a {
             background-color: #BF9F50;
             color: black;
+            transition: 0.3s all;
         }
 
-        .apartman-data-footer button:hover {
-            color: #5a5a5a;
+        .apartman-data-footer a:hover {
+            color: white;
         }
     }
 }
 
+.front-page-small-footer a {
+    color: #BF9F50;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
 @media (max-width: 1000px) {
     .front-page-small-footer h3 {
         font-size: 14px;
         width: 60%;
     }
-    .front-page-small-footer button {
+    .front-page-small-footer a {
         font-size: 14px;
         width: 30%;
     }

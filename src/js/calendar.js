@@ -101,7 +101,7 @@ class Calendar {
         })
 
         this.month_input.addEventListener('change', () => {
-            this.month2=this.month_input2.selectedIndex
+            this.month=this.month_input.selectedIndex
             this.display_dates()
         })
         this.month_input2.addEventListener('change', () => {
@@ -124,12 +124,15 @@ class Calendar {
 
     open_calendar_container(e) {
         e.preventDefault();
+        this.calendar_container.focus()
+        this.calendar_container.scrollIntoView({behavior: "smooth", offset: { top: 200 }})
         this.calendar_container.classList.remove('d-none')
         this.calendar_container.classList.add('d-flex')
     }
 
     close_calendar_container(e) {
         e.preventDefault()
+        this.calendar_container.focus()
         this.calendar_container.classList.remove('d-flex')
         this.calendar_container.classList.add('d-none')
     }

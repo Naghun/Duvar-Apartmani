@@ -113,6 +113,17 @@ background-color: #EFEFEF;  -   bijela
     }
 }
 
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.message {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    color: rgb(76, 175, 76);
+}
+
 .row-text {
     padding-bottom: 20px;
 }

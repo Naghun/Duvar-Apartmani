@@ -32,15 +32,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<h2 class="col-9 text-center">Ako imate pitanja u vezi svog smještaja u blagaju budite slobodni da nas kontaktirate</h2>
 			</div>
 			<div class="col-12 contact-body d-flex justify-content-center align-items-center">
-				<div class="col-6 contact-form-container d-flex justify-content-center align-items-center">
-					<form action="" class="contact-form col-12 p-5">
-						<input type="text" placeholder="Ime" class="form-input-simple">
-						<input type="text" placeholder="Prezime" class="form-input-simple">
-						<input type="number" placeholder="Broj Telefona" class="form-input-simple">
-						<input type="email" placeholder="Email" class="form-input-simple">
-						<input type="textarea" placeholder="Poruka" class="form-input-not">
-						<input type="submit" value="Pošalji" class="btn btn-dark form-submit-button col-6">
+				<div class="col-6 contact-form-container d-flex justify-content-center align-items-center" id="contact-body">
+					<form action="" class="contact-form col-12 p-5" id="contact-form">
+						<input type="text" placeholder="Ime" class="form-input-simple" id="contact-name">
+						<input type="text" placeholder="Prezime" class="form-input-simple" id="contact-surname">
+						<input type="number" placeholder="Broj Telefona" class="form-input-simple" id="contact-phone">
+						<input type="email" placeholder="Email" class="form-input-simple" id="contact-email">
+						<input type="textarea" placeholder="Poruka" class="form-input-not" id="contact-message">
+						<input type="hidden" name="action" value="contact_form_action" id="action-contact">
+                		<?php wp_nonce_field( 'contact_form_nonce', 'contact_form_nonce', true, true); ?>
+						<input type="submit" value="Pošalji" class="btn btn-dark form-submit-button col-6" id="contact-submit">
 					</form>
+				</div>
+				<div class="col-6 d-none justify-content-center align-items-center message-info" id="message-info">
+					<h1 class="col-12 text-center message" id="message"></h1>
 				</div>
 				<div class="col line-break"></div>
 				<div class="col-6 contact-icons d-flex justify-content-center align-items-center">

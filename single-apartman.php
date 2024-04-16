@@ -55,6 +55,7 @@ $container = get_theme_mod( 'understrap_container_type' );
             } else {
                 get_template_part( 'loop-templates/content', 'none' );
             }
+            
 
         ?>
 

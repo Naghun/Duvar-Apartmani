@@ -75,7 +75,7 @@ $container = get_theme_mod( 'understrap_container_type' );
             <?php
                 endwhile;
             endif;
-            wp_reset_postdata(); // Resetujemo query kako ne bi uticao na ostatak stranice
+            wp_reset_postdata();
             ?>
         </div>
 

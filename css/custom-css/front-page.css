@@ -118,7 +118,7 @@
             }
 
             .submit-button {
-                font-size: 12px;
+                font-size: 10px;
             }
         }
 
@@ -137,7 +137,7 @@
 
             .submit-button {
                 padding: 6px 2px;
-                font-size: 10px;
+                font-size: 8px;
             }
         }
 
@@ -351,7 +351,7 @@
     h3 {
         font-weight: 700;
     }
-    button {
+    a {
         border-radius: 5px;
         color: #BF9F50;
         font-family: "Ubuntu", sans-serif;
@@ -359,7 +359,7 @@
         text-transform: uppercase;
     }
 
-    button:hover {
+    a:hover {
         color: #EFEFEF;
         background-color: #3d3d3d;
     }
@@ -374,6 +374,9 @@
     .front-page-small-footer h3 {
         font-size: 20px;
     }   
+    .front-page-small-footer a {
+        font-size: 18px;
+    }   
 }
 @media (max-width: 1000px) {
     .front-page-small-footer h3 {
@@ -381,11 +384,8 @@
         text-align: center;
     }
     .front-page-small-footer a {
-        width: 40%;
-
-        button {
-            width: 80%;
-        }
+        width: 35%;
+        padding-right: 10px;
     }
 }
 @media (max-width: 500px) {
@@ -394,10 +394,8 @@
     }
     .front-page-small-footer{
         a {
-            button {
-                width: 90%;
-                font-size: 12px;
-            }
+            width: 30%;
+            font-size: 10px;
         }  
     } 
 }

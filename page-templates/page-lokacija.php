@@ -31,7 +31,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
         <div class="row d-flex justify-content-center align-items-center"><!-- .row -->
             <div class="front-page-reservation-container col-12 d-flex justify-content-center align-items-center">
-                <h1>U slučaju potrebe slobodno da nas kontaktirate</h1>
+                <h1>U slučaju potrebe slobodno nas kontaktirajte</h1>
             </div>
         </div><!-- .row -->
 

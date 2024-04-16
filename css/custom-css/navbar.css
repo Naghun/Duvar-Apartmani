@@ -176,6 +176,11 @@
 
     .custom-navbar-2 {
         .navbar-list a {
+            font-size: 12px;
+        }
+    }
+    .custom-navbar   {
+        .navbar-list a {
             font-size: 14px;
         }
     }

@@ -9308,8 +9308,16 @@
 	    this.year_input2 = this.calendar_container.querySelector('.year-input2');
 	    this.dates = document.querySelector('.dates');
 	    this.dates2 = document.querySelector('.dates2');
-	    this.selected_date = new Date();
-	    this.selected_date2 = new Date();
+	    this.submit_dates = document.getElementById("reservation-dates");
+	    const stored_start_date = localStorage.getItem('start_date');
+	    const stored_end_date = localStorage.getItem('end_date');
+	    if (stored_start_date && stored_end_date) {
+	      this.selected_date = new Date(stored_start_date);
+	      this.selected_date2 = new Date(stored_end_date);
+	    } else {
+	      this.selected_date = new Date();
+	      this.selected_date2 = new Date();
+	    }
 	    this.month = this.selected_date.getMonth();
 	    this.month2 = this.selected_date2.getMonth();
 	    this.year = this.selected_date.getFullYear();
@@ -9333,6 +9341,7 @@
 	    this.calendar_close_button.addEventListener('click', this.close_calendar_container.bind(this));
 	    this.calendar_apply_button.addEventListener('click', e => {
 	      e.preventDefault();
+	      window.scrollBy(0, -300);
 	      this.calendar_container.classList.remove('d-flex');
 	      this.calendar_container.classList.add('d-none');
 	      this.calendar_start_field.value = this.selected_date.toLocaleDateString("en-US", {
@@ -9345,6 +9354,8 @@
 	        month: "2-digit",
 	        day: "2-digit"
 	      });
+	      localStorage.setItem('start_date', this.selected_date.toISOString());
+	      localStorage.setItem('end_date', this.selected_date2.toISOString());
 	    });
 	    this.next_month_button.addEventListener('click', () => {
 	      if (this.month === 11) {
@@ -9397,18 +9408,14 @@
 	  open_calendar_container(e) {
 	    e.preventDefault();
 	    this.calendar_container.focus();
-	    this.calendar_container.scrollIntoView({
-	      behavior: "smooth",
-	      offset: {
-	        top: 200
-	      }
-	    });
+	    window.scrollBy(0, 300);
 	    this.calendar_container.classList.remove('d-none');
 	    this.calendar_container.classList.add('d-flex');
 	  }
 	  close_calendar_container(e) {
 	    e.preventDefault();
 	    this.calendar_container.focus();
+	    window.scrollBy(0, -300);
 	    this.calendar_container.classList.remove('d-flex');
 	    this.calendar_container.classList.add('d-none');
 	  }
@@ -9418,6 +9425,7 @@
 	  display_dates2() {
 	    this.update_year_month2();
 	    this.dates2.innerHTML = "";
+	    const today = new Date();
 	    const last_of_prev_month = new Date(this.year2, this.month2, 0);
 	    for (let i = 0; i < last_of_prev_month.getDay(); i++) {
 	      const text = last_of_prev_month.getDate() - last_of_prev_month.getDay() + i;
@@ -9429,16 +9437,18 @@
 
 	    const last_of_month = new Date(this.year2, this.month2 + 1, 0);
 	    for (let i = 1; i <= last_of_month.getDate(); i++) {
-	      const is_today = this.selected_date.getDate() === i && this.selected_date.getFullYear() === this.year2 && this.selected_date.getMonth() === this.month2;
-	      const new_button = this.create_button2(i, false, is_today);
+	      const is_today = this.isToday(today, this.year2, this.month2, i);
+	      const [today_day, today_month, today_year] = [today.getDate(), today.getMonth(), today.getFullYear()];
+	      const is_disabled = this.year2 < today_year || this.year2 === today_year && this.month2 < today_month || this.year2 === today_year && this.month2 === today_month && i < today_day;
+	      const new_button = this.create_button(i, is_disabled, is_today);
 	      new_button.addEventListener('click', this.handle_date_click2.bind(this));
 	      this.dates2.appendChild(new_button);
 	    }
 
 	    // next month
 
-	    const first_of_next_month = new Date(this.year2, this.month2 + 1, 0);
-	    for (let i = first_of_next_month.getDay(); i < 7; i++) {
+	    const first_of_next_month = new Date(this.year2, this.month2 + 1, 1);
+	    for (let i = first_of_next_month.getDay(); i < 8; i++) {
 	      const text = first_of_next_month.getDate() + i - first_of_next_month.getDay();
 	      const new_button = this.create_button2(text, true, false);
 	      this.dates2.appendChild(new_button);
@@ -9449,7 +9459,7 @@
 	    this.dates.innerHTML = "";
 
 	    // last
-
+	    const today = new Date();
 	    const last_of_prev_month = new Date(this.year, this.month, 0);
 	    for (let i = 0; i < last_of_prev_month.getDay(); i++) {
 	      const text = last_of_prev_month.getDate() - last_of_prev_month.getDay() + i;
@@ -9461,22 +9471,27 @@
 
 	    const last_of_month = new Date(this.year, this.month + 1, 0);
 	    for (let i = 1; i <= last_of_month.getDate(); i++) {
-	      const is_today = this.selected_date.getDate() === i && this.selected_date.getFullYear() === this.year && this.selected_date.getMonth() === this.month;
-	      const new_button = this.create_button(i, false, is_today);
+	      const is_today = this.isToday(today, this.year, this.month, i);
+	      const [today_day, today_month, today_year] = [today.getDate(), today.getMonth(), today.getFullYear()];
+	      const is_disabled = this.year < today_year || this.year === today_year && this.month < today_month || this.year === today_year && this.month === today_month && i < today_day;
+	      const new_button = this.create_button(i, is_disabled, is_today);
 	      new_button.addEventListener('click', this.handle_date_click.bind(this));
 	      this.dates.appendChild(new_button);
 	    }
 
 	    // next month
 
-	    const first_of_next_month = new Date(this.year, this.month + 1, 0);
-	    for (let i = first_of_next_month.getDay(); i < 7; i++) {
+	    const first_of_next_month = new Date(this.year, this.month + 1, 1);
+	    for (let i = first_of_next_month.getDay(); i < 8; i++) {
 	      const text = first_of_next_month.getDate() + i - first_of_next_month.getDay();
 	      const new_button = this.create_button(text, true, false);
 	      this.dates.appendChild(new_button);
 	    }
 	  }
-	  create_button(text, is_disabled = false, is_today = false) {
+	  isToday(today, year, month, day) {
+	    return today.getFullYear() === year && today.getMonth() === month && today.getDate() === day;
+	  }
+	  create_button(text, is_disabled, is_today) {
 	    const new_button = document.createElement('button');
 	    new_button.textContent = text;
 	    new_button.disabled = is_disabled;

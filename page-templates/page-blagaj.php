@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Home Page Template
+ * Template Name: Blagaj Page Template
  *
- * Template for displaying a landing page.
+ * Template for displaying a Blagaj page.
  *
  * @package Understrap
  */
@@ -25,16 +25,17 @@ $container = get_theme_mod( 'understrap_container_type' );
         </div>
     </div>
 
-        <!-- ======================================================== -->
+        
 
+        <!-- ======================================================== -->
 
 		<div class="row d-flex justify-content-center align-items-center"><!-- .row -->
             <div class="front-page-reservation-container col-12 justify-content-center align-items-center">
-                <form class="d-flex col-12 justify-content-around align-items-center">
+                <form action="" class="d-flex col-12 justify-content-around align-items-center">
                     <h1 class="d-flex justify-content-center align-items-center">REZERVIŠITE SMJEŠTAJ U BLAGAJU</h1>
-                    <input type="text" placeholder="Prijava" class="input-field input-field-sign" id="calendar-start" autocomplete="off" name="start_date">
-                    <input type="text" placeholder="Odjava"  class="input-field" id="calendar-end" autocomplete="off" name="end_date">
-                    <a class="submit-button btn btn-dark p-2 m-0" id="reservation-dates" href="<?php echo esc_url(get_permalink(get_page_by_path('rezervacija'))); ?>">Traži</a>
+                    <input type="text" placeholder="Prijava" class="input-field input-field-sign" id="calendar-start" autocomplete="off">
+                    <input type="text" placeholder="Odjava"  class="input-field" id="calendar-end" autocomplete="off">
+                    <a class="submit-button btn btn-dark p-2 m-0" href="<?php echo esc_url(get_permalink(get_page_by_path('rezervacija'))); ?>">Traži</a>
                 </form>
             </div>
         </div><!-- .row -->
@@ -128,22 +129,22 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="row front-page-data">
 
             <div class="data-1 col-12 d-flex justify-content-center align-items-start">
-
+        
                 <div class="data-image col-6 p-2">
                     <img src="<?php echo get_theme_file_uri('/src/images/kuca-slika-1.png'); ?>" alt="slika kuce">
                 </div>
                 <div class="data-text col-6 p-2">
                     <h3 class="h3-back">Apartman u blagaju</h3>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Aut ipsum reiciendis quaerat eos ducimus,
-                        iure in exercitationem architecto praesentium beatae voluptatum laboriosam minima mollitia corporis corrupti tempore molestiae esse.
-                        Eveniet eligendi voluptatum temporibus, eum a mollitia odit molestias necessitatibus dicta!
-                        Placeat ducimus adipisci,
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Aut ipsum reiciendis quaerat eos ducimus, 
+                        iure in exercitationem architecto praesentium beatae voluptatum laboriosam minima mollitia corporis corrupti tempore molestiae esse. 
+                        Eveniet eligendi voluptatum temporibus, eum a mollitia odit molestias necessitatibus dicta! 
+                        Placeat ducimus adipisci, 
                         quaerat magnam dolores perferendis! Amet, consectetur. Quam.
                     </p>
                     <a class="btn btn-dark data-text-button" href="<?php echo esc_url(get_permalink(get_page_by_path('apartman'))); ?>">Više Informacija</a>
-
+                    
                 </div>
             </div>
         </div><!-- .row -->
@@ -154,11 +155,11 @@ $container = get_theme_mod( 'understrap_container_type' );
             <div class="data-2 col-12 d-flex justify-content-center align-items-start">
                 <div class="data-text col-6 p-2">
                     <h3>Lokacija</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Aut ipsum reiciendis quaerat eos ducimus,
-                        iure in exercitationem architecto praesentium beatae voluptatum laboriosam minima mollitia corporis corrupti tempore molestiae esse.
-                        Eveniet eligendi voluptatum temporibus, eum a mollitia odit molestias necessitatibus dicta!
-                        Placeat ducimus adipisci,
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Aut ipsum reiciendis quaerat eos ducimus, 
+                        iure in exercitationem architecto praesentium beatae voluptatum laboriosam minima mollitia corporis corrupti tempore molestiae esse. 
+                        Eveniet eligendi voluptatum temporibus, eum a mollitia odit molestias necessitatibus dicta! 
+                        Placeat ducimus adipisci, 
                         quaerat magnam dolores perferendis! Amet, consectetur. Quam.</p>
                     <a class="btn btn-dark data-text-button" href="<?php echo esc_url(get_permalink(get_page_by_path('lokacija'))); ?>">Više Informacija</a>
                 </div>

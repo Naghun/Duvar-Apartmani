@@ -136,6 +136,14 @@ function duvar_files() {
 		wp_enqueue_script('reservation-form', get_stylesheet_directory_uri() . '/src/js/reservation.js', array(), '1.0', true);
 		wp_enqueue_style('reservation-style', get_stylesheet_directory_uri() . '/css/custom-css/reservation.css', array(), null, 'all');
 		wp_enqueue_script('reservation-calendar', get_stylesheet_directory_uri() . '/src/js/calendar.js', array(), '1.0', true);
+		wp_enqueue_script('reservation-logic', get_stylesheet_directory_uri() . '/src/js/reservation-logic.js', array(), '1.0', true);
+
+		wp_localize_script('reservation-logic', 'form_reservation_data', array(
+			'site_url' => 'https://duvar-apartmani.local',
+			'nonce' => wp_create_nonce('wp_rest'),
+			'ajax_url' => admin_url('admin-ajax.php')
+		));
+
 	}
 	if (is_page('apartman') || is_page_template('Apartman')) {
 		wp_enqueue_style('apartman-style', get_stylesheet_directory_uri() . '/css/custom-css/apartman.css', array(), null, 'all');
@@ -146,6 +154,13 @@ function duvar_files() {
 	}
 	if (is_page('Kontakt') || is_page_template('Kontakt Page Template')) {
 		wp_enqueue_style('contact-style', get_stylesheet_directory_uri() . '/css/custom-css/contact.css', array(), null, 'all');
+		wp_enqueue_script('contact-logic', get_stylesheet_directory_uri() . '/src/js/contact.js', array(), '1.0', true);
+
+		wp_localize_script('contact-logic', 'form_contact_data', array(
+			'site_url' => 'https://duvar-apartmani.local',
+			'nonce' => wp_create_nonce('wp_contact'),
+			'ajax_url' => admin_url('admin-ajax.php')
+		));
 	}
 	if (is_page('Lokacija') || is_page_template('Location Page Template')) {
 		wp_enqueue_style('location-style', get_stylesheet_directory_uri() . '/css/custom-css/location.css', array(), null, 'all');
@@ -169,6 +184,13 @@ function duvar_files() {
 	wp_enqueue_style('blog-style', get_stylesheet_directory_uri() . '/css/custom-css/index.css', array(), null, 'all');
 
 	wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4');
+	wp_enqueue_script('jquery');
+
+
 }
 
 add_action('wp_enqueue_scripts', 'duvar_files');
+
+
+require get_theme_file_path('inc-php/reservation-ajax.php');
+require get_theme_file_path('inc-php/contact-ajax.php');

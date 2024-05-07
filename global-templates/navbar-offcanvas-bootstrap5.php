@@ -60,6 +60,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</div><!-- .offcancas-header -->
 
 			<!-- The WordPress Menu goes here -->
+			
 			<?php
 
 			if (is_front_page()) {

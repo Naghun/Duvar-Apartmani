@@ -5,31 +5,33 @@ color: #BF9F50;
 color: #282828; 
 */
 
-.single-starter {
+.single-starter-blog {
     padding-top: 120px;
+
+    .blog-container {
+
+        background-color: #E5E5E5;
+        h1 {
+            font-family: "Playfair Display", serif;
+            font-weight: 700;
+        }
+    
+        .details {
+            p {
+                font-family: "Ubuntu", sans-serif;
+                font-weight: 500;
+                padding: 10px;
+            }
+    
+            .blog-img {
+                border: none;
+                border-radius: 50px;
+            }
+        }
+    }
 }
 
-.blog-container {
 
-    background-color: #E5E5E5;
-    h1 {
-        font-family: "Playfair Display", serif;
-        font-weight: 700;
-    }
-
-    .details {
-        p {
-            font-family: "Ubuntu", sans-serif;
-            font-weight: 500;
-            padding: 10px;
-        }
-
-        .blog-img {
-            border: none;
-            border-radius: 50px;
-        }
-    }
-}
 
 @media (max-width: 1400px) {
     .blog-img {

@@ -166,7 +166,10 @@ function duvar_files() {
 		wp_enqueue_style('location-style', get_stylesheet_directory_uri() . '/css/custom-css/location.css', array(), null, 'all');
 		wp_enqueue_script('custom-calendar', get_stylesheet_directory_uri() . '/src/js/calendar.js', array(), '1.0', true);
 	}
-	if (is_page('Politika Privatnosti') || is_page_template('default'))  {
+	if (is_page('Blagaj')) {
+		wp_enqueue_style('location-style', get_stylesheet_directory_uri() . '/css/custom-css/blagaj.css', array(), null, 'all');
+	}
+	if (is_page('Politika Privatnosti') || is_page_template('Privacy Page Template'))  {
 		wp_enqueue_style('location-style', get_stylesheet_directory_uri() . '/css/custom-css/privacy.css', array(), null, 'all');
 	}
 	

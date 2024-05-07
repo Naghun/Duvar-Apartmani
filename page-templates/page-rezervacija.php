@@ -24,19 +24,12 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <h1>Apartman Blagaj</h1>
             </div>
         </div>
-
-        <?php
-        session_start();
-        $start_date = isset($_SESSION['start_date']) ? $_SESSION['start_date'] : "";
-        $end_date = isset($_SESSION['end_date']) ? $_SESSION['end_date'] : "";
-        ?>
-
         
         <div class="row front-page-reservation-container justify-content-center align-items-center">
             <form class="d-flex col-12 justify-content-around align-items-center">
                 <h1 class="d-flex justify-content-center align-items-center">REZERVIŠITE SMJEŠTAJ U BLAGAJU</h1>
-                <input type="text" placeholder="Prijava" class="input-field input-field-sign" id="calendar-start" autocomplete="off" value="<?php echo htmlspecialchars($start_date); ?>">
-                <input type="text" placeholder="Odjava"  class="input-field" id="calendar-end" autocomplete="off" value="<?php echo htmlspecialchars($end_date); ?>">
+                <input type="text" placeholder="Prijava" class="input-field input-field-sign" id="calendar-start" autocomplete="off">
+                <input type="text" placeholder="Odjava"  class="input-field" id="calendar-end" autocomplete="off">
                 <button class="submit-button btn btn-dark" id="reservation-submit-real">Traži</button>
                 <input type="hidden" name="action" value="reservation_form_action" id="action-input">
                 <?php wp_nonce_field( 'reservation_form_nonce', 'reservation_form_nonce', true, true); ?>

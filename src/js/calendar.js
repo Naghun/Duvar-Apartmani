@@ -2,53 +2,52 @@ class Calendar {
     constructor() {
 
         this.calendar_container = document.getElementById('calendar-container')
-        this.calendar_start_field = document.getElementById('calendar-start')
-        this.calendar_end_field = document.getElementById('calendar-end')
-        this.calendar_close_button = document.getElementById('close-calendar')
-        this.calendar_apply_button = document.getElementById('apply-calendar')
 
-        this.next_month_button = this.calendar_container.querySelector('.next')
-        this.prev_month_button = this.calendar_container.querySelector('.prev')
-        this.next_month_button2 = this.calendar_container.querySelector('.next2')
-        this.prev_month_button2 = this.calendar_container.querySelector('.prev2')
-
-        this.month_input = this.calendar_container.querySelector('.month-input')
-        this.year_input = this.calendar_container.querySelector('.year-input')
-        this.month_input2 = this.calendar_container.querySelector('.month-input2')
-        this.year_input2 = this.calendar_container.querySelector('.year-input2')
-
-        this.dates = document.querySelector('.dates')
-        this.dates2 = document.querySelector('.dates2')
-
-        this.submit_dates = document.getElementById("reservation-dates")
-
-        const stored_start_date = localStorage.getItem('start_date');
-        const stored_end_date = localStorage.getItem('end_date');
-        if (stored_start_date && stored_end_date) {
-            this.selected_date = new Date(stored_start_date);
-            this.selected_date2 = new Date(stored_end_date);
-        } else {
-            this.selected_date = new Date()
-            this.selected_date2 = new Date()
+        if (this.calendar_container) {
+            this.calendar_start_field = document.getElementById('calendar-start')
+            this.calendar_end_field = document.getElementById('calendar-end')
+            this.calendar_close_button = document.getElementById('close-calendar')
+            this.calendar_apply_button = document.getElementById('apply-calendar')
+            this.next_month_button = this.calendar_container.querySelector('.next')
+            this.prev_month_button = this.calendar_container.querySelector('.prev')
+            this.next_month_button2 = this.calendar_container.querySelector('.next2')
+            this.prev_month_button2 = this.calendar_container.querySelector('.prev2')
+    
+            this.month_input = this.calendar_container.querySelector('.month-input')
+            this.year_input = this.calendar_container.querySelector('.year-input')
+            this.month_input2 = this.calendar_container.querySelector('.month-input2')
+            this.year_input2 = this.calendar_container.querySelector('.year-input2')
+            this.dates = document.querySelector('.dates')
+            this.dates2 = document.querySelector('.dates2')
+    
+            this.submit_dates = document.getElementById("reservation-dates")
+    
+            const stored_start_date = localStorage.getItem('start_date');
+            const stored_end_date = localStorage.getItem('end_date');
+            if (stored_start_date && stored_end_date) {
+                this.selected_date = new Date(stored_start_date);
+                this.selected_date2 = new Date(stored_end_date);
+            } else {
+                this.selected_date = new Date()
+                this.selected_date2 = new Date()
+            }
+    
+            
+            this.month=this.selected_date.getMonth()
+            this.month2=this.selected_date2.getMonth()
+            this.year=this.selected_date.getFullYear()
+            this.year2=this.selected_date2.getFullYear()
+    
+            // second calendar
+    
+            this.display_dates()
+            this.display_dates2()
+            this.create_button()
+            this.create_button2()
+            this.events()
+            this.update_year_month()
+            this.update_year_month2()
         }
-
-        
-        this.month=this.selected_date.getMonth()
-        this.month2=this.selected_date2.getMonth()
-        this.year=this.selected_date.getFullYear()
-        this.year2=this.selected_date2.getFullYear()
-
-        // second calendar
-
-        this.display_dates()
-        this.display_dates2()
-        this.create_button()
-        this.create_button2()
-        this.events()
-        this.update_year_month()
-        this.update_year_month2()
-
-
 
     }
 
@@ -295,6 +294,7 @@ class Calendar {
 
 }
 
-
-var calendar = new Calendar();
+if (window.location.pathname === '/' || window.location.pathname === '/rezervacija' || window.location.pathname === '/lokacija') {
+    var calendar = new Calendar();
+}
 

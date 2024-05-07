@@ -599,6 +599,17 @@
     .calendars {
         display: flex;
         flex-direction: column;
+        .calendar2 {
+            .header-calendar2 {
+                padding: 0%;
+                padding-top: 30px;
+            }
+            .days2  {
+                padding: 0%;
+                padding-bottom: 10px;
+            }
+        }
+        
     }
 }
 @media (max-width: 580px) {

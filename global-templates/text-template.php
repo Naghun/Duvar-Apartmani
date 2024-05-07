@@ -1,5 +1,5 @@
-<div class="col-12 d-flex">
-    <p class="d-flex justify-content-center text-justify">Blagaj ili BLAGI GAJ 
+<div class="col-12 d-flex text-justify text-template">
+    <p class="d-flex justify-content-center text-in-template col-12">Blagaj ili BLAGI GAJ 
     - Etimologija imena ovog pitoresnog gradića na smaragdnoj rijeci Buni govori dovoljno sama za sebe. Blagaj je oaza svježine u hercegovačkom kršu u 
     koji se dolazi zbog njegove ljepote, očaravajuće prirode i povijesti po kojoj hodate. 
     Gradić koji se na bajkovit način isprepliću povijest i neponovljivi prirodni ambijent, 

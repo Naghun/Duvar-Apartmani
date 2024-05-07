@@ -37,7 +37,7 @@ function reservation_form_action_callback() {
         }
     }
 
-    $nights = count($new_days);
+    $nights = count($new_days)-1;
     $response = array();
     if ($is_date_taken == true) {
         $response['dosupnost'] = 'datum zauzet';
@@ -98,8 +98,10 @@ function get_all_data_callback() {
     if (isset($_POST['ajax_data'])) {
         $all_form_data = $_POST['ajax_data'];
     
-        $formatted_dates = $all_form_data[0];
+        $formatted_dates_all = $all_form_data[0];
         $form_details = $all_form_data[1];
+
+        $formatted_dates = array_slice($formatted_dates_all, 0, -1);
 
         // getting data from form_details
 
@@ -121,11 +123,6 @@ function get_all_data_callback() {
 
     // rezervacija
 
-    // getting first and last date
-
-    $sign_in = reset($formatted_dates);
-    $sign_out = end($formatted_dates);
-
     $rezervacija_post_args = array(
         'post_title' => 'Rezervacija - ' . $ime,
         'post_status' => $status,
@@ -136,8 +133,8 @@ function get_all_data_callback() {
 
     if (!is_wp_error($id_rezervacija)) {
         $rezervacija_meta_fields = array(
-            'vrijeme_dolaska' => $sign_in,
-            'vrijeme_odjave' => $sign_out,
+            'vrijeme_dolaska' => date('Y-m-d', strtotime(reset($formatted_dates_all))),
+            'vrijeme_odjave' => date('Y-m-d', strtotime(end($formatted_dates_all))),
             'broj_gostiju' => $broj_gostiju,
             'ime_gosta' => $ime . '' . $prezime,
             'kontakt_gosta' => $email,

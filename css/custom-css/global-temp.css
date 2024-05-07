@@ -27,7 +27,7 @@
     h3 {
         font-weight: 700;
     }
-    button {
+    a {
         border-radius: 5px;
         color: #BF9F50;
         font-family: "Ubuntu", sans-serif;
@@ -35,7 +35,7 @@
         text-transform: uppercase;
     }
 
-    button:hover {
+    a:hover {
         color: #EFEFEF;
         background-color: #3d3d3d;
     }
@@ -55,5 +55,17 @@
     .front-page-small-footer h3, a {
         width: 50%;
         text-align: center;
+    }
+}
+
+/* ============================================= *
+*   Text Template
+* ============================================== */
+
+
+
+.text-template {
+    .text-in-template {
+        text-align: justify;
     }
 }
